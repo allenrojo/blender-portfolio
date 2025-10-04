@@ -4,30 +4,46 @@
   box-sizing: border-box;
   background-color: rgba(236, 239, 244);
   font-family: JetBrains Mono, monospace;
-
-  color: rgba(106, 119, 154);
+  color: #6a7791;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.page-sections {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#home,
+#contact {
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home h1 {
+  font-size: 9rem;
+}
 .main-container {
   display: flex;
   margin-left: 13.75rem;
 }
 
-/* Scrollbar track */
 ::-webkit-scrollbar {
-  width: 8px;             /* width of the scrollbar */
-  height: 8px;            /* height if horizontal */
+  width: 8px;
+  height: 8px;
 }
 
-/* Scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(106, 119, 154); /* subtle dark color */
-  border-radius: 4px;                    /* rounded edges */
+  background-color: #6a7791;
+  border-radius: 4px;
 }
 
-/* Scrollbar track background */
 ::-webkit-scrollbar-track {
-  background: transparent;               /* transparent track for minimal look */
+  background: transparent;
 }
-
-

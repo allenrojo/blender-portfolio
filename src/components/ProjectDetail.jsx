@@ -11,11 +11,11 @@ function ProjectDetail() {
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    const foundProject = projects.find(p => p.title === decodedTitle);
+    const foundProject = projects.find((p) => p.title === decodedTitle);
     setProject(foundProject);
 
     window.scrollTo(0, 0);
-  }, [decodedTitle]);  
+  }, [decodedTitle]);
 
   if (!project) return <div>Project not found.</div>;
 
@@ -32,7 +32,9 @@ function ProjectDetail() {
         <ProjectGrid />
       </div>*/}
 
-      <Link to="/" className="back-home-link">← Back to Projects</Link>
+      <Link to="/#projects" className="back-home-link">
+        ← Back to Projects
+      </Link>
     </div>
   );
 }

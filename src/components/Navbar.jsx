@@ -5,17 +5,14 @@ function Navbar() {
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <NavLink to="/" className="nav-link">
-          {" "}
-          home{" "}
+        <NavLink to="/#home" className="nav-link">
+          [home]
         </NavLink>
-        <NavLink to="/" className="nav-link">
-          {" "}
-          about{" "}
+        <NavLink to="/#projects" className="nav-link">
+          [projects]
         </NavLink>
-        <NavLink to="/" className="nav-link">
-          {" "}
-          contact{" "}
+        <NavLink to="/#contact" className="nav-link">
+          [contact]
         </NavLink>
       </nav>
       <img className="logo" src="/logo.svg"></img>

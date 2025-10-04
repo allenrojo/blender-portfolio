@@ -6,7 +6,7 @@
   padding: 1rem 13.75rem;
   color: #aaaaaa;
 }
-p {
+.project-detail-container p {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(106, 119, 154);
 }
@@ -16,4 +16,3 @@ p {
   object-fit: cover;
   padding-bottom: 1rem;
 }
-
