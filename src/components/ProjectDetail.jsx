@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projects } from "../projects.js";
 import "./ProjectDetail.css";
-import ProjectGrid from "./ProjectGrid.jsx";
+import { Link } from "react-router-dom";
 
 function ProjectDetail() {
   const { title } = useParams();
@@ -32,7 +32,7 @@ function ProjectDetail() {
         <ProjectGrid />
       </div>*/}
 
-      <p>Back to Projects</p>
+      <Link to="/" className="back-home-link">← Back to Projects</Link>
     </div>
   );
 }
