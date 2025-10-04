@@ -1,5 +1,4 @@
 .project-detail-container {
-  margin-left: 13.75rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
 }
 p {
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgba(106, 119, 154);
 }
 
 .media-item {

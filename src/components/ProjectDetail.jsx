@@ -1,11 +1,21 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { projects } from "../projects.js";
 import "./ProjectDetail.css";
+import ProjectGrid from "./ProjectGrid.jsx";
 
 function ProjectDetail() {
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
-  const project = projects.find((p) => p.title === decodedTitle);
+
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    const foundProject = projects.find(p => p.title === decodedTitle);
+    setProject(foundProject);
+
+    window.scrollTo(0, 0);
+  }, [decodedTitle]);  
 
   if (!project) return <div>Project not found.</div>;
 
@@ -17,12 +27,17 @@ function ProjectDetail() {
         images={project.images || []}
         videos={project.videos || []}
       />
+      {/*<div className="project-grid-wrapper">
+        <p>Other Projects</p>
+        <ProjectGrid />
+      </div>*/}
+
+      <p>Back to Projects</p>
     </div>
   );
 }
 
 function MediaColumn({ images = [], videos = [] }) {
-  
   const mediaItems = [
     ...videos.map((src) => ({ type: "video", src })),
     ...images.map((src) => ({ type: "image", src })),

@@ -134,7 +134,7 @@ const projects = [
       "/projects/nbs-img-3.png",
     ],
     videos: ["/projects/nbs-vid-1.mp4"],
-    span: 2,
+    span: 3,
   },
   {
     cover: { type: "video", src: "/projects/zarks-vid-1.mp4" },

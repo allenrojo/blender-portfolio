@@ -2,10 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(26, 26, 26, 1);
-  font-family: Poppins;
+  background-color: rgba(236, 239, 244);
+  font-family: JetBrains Mono, monospace;
+
+  color: rgba(106, 119, 154);
 }
 
 .main-container {
   display: flex;
+  margin-left: 13.75rem;
 }
+
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 8px;             /* width of the scrollbar */
+  height: 8px;            /* height if horizontal */
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(106, 119, 154); /* subtle dark color */
+  border-radius: 4px;                    /* rounded edges */
+}
+
+/* Scrollbar track background */
+::-webkit-scrollbar-track {
+  background: transparent;               /* transparent track for minimal look */
+}
+
+
