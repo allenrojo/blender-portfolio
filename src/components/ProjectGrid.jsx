@@ -1,32 +1,40 @@
 import { NavLink } from "react-router-dom";
-import { projects } from "../projects.js"
+import { projects } from "../projects.js";
 import "./ProjectGrid.css";
 
 function ProjectGrid() {
-    return  (
-        <div className ="project-grid">
-            {
-                projects.map((p,i) => (
-                    <ProjectCard key={i} {...p} />
-                ))
-            }
+  return (
+    <div className="project-grid">
+      {projects.map((p, i) => (
+        <ProjectCard key={i} {...p} />
+      ))}
     </div>
-    );
+  );
 }
 export default ProjectGrid;
 
-function ProjectCard({ img, title, tags, span }) {
+function ProjectCard({ cover, title, tags, span }) {
   return (
-    <div className="|">
-        <div className="project-card" style={{ gridColumn: `span ${span || 1}` }}>
-          <img src={img} alt={title} />
-          <div className="project-info">
-            <div className="project-title">{title}</div>
-            <div className="project-tags">
-              {tags.map(tag => <span key={tag}>{tag}</span>)}
-            </div>
+    <NavLink
+      to={`/projects/${encodeURIComponent(title)}`}
+      className="project-card-link"
+      style={{ gridColumn: `span ${span || 1}` }}
+    >
+      <div className="project-card">
+        {cover.type === "video" ? (
+          <video src={cover.src} autoPlay muted loop playsInline />
+        ) : (
+          <img src={cover.src} alt={title} />
+        )}
+        <div className="project-info">
+          <div className="project-title">{title}</div>
+          <div className="project-tags">
+            {tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
           </div>
         </div>
-    </div>
+      </div>
+    </NavLink>
   );
 }
