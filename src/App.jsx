@@ -92,11 +92,23 @@ function PageSections() {
         </p>
         <WordFlip />
         <p className="name-text">ALLEN ROJO</p>
+        
         <div className="footer-container">
           <p className="footer-text">Scroll to Explore</p>
           <img className="down-arrow" src="/arrow.svg" alt="down arrow" />
         </div>
-        <p className="work-text">Some of my recent works and personal projects.</p>
+        <div className="work-container">
+          <p className="work-text">Some of my recent works and personal projects.</p>
+          <div className="logo-container">
+            <img className="large-logo" src="/blender-logo.svg" alt="logo" />
+            <img className="large-logo" src="/photoshop-logo.svg" alt="logo" />
+            <img className="large-logo" src="/illustrator-logo.svg" alt="logo" />
+            <img className="large-logo" src="/figma-logo.svg" alt="logo" />
+            <img className="large-logo" src="/unreal-logo.svg" alt="logo" />
+            <img className="large-logo" src="/qgis-logo.svg" alt="logo" />
+          
+          </div>
+        </div>
       </section>
 
       <section id="projects">

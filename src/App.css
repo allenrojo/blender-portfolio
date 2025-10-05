@@ -49,15 +49,39 @@ html {
 .name-text {
   font-size: 6rem;
   background-color: #ccd2e0;
+  letter-spacing: -0.1em;
 }
 
+.logo-container {
+  display: flex;
+  gap: 3rem;
+  background-color: #d8dee900;
+  mix-blend-mode: luminosity;
+}
+.large-logo {
+  background-color: #d8dee900;
+  width: auto; /* or any size you want */
+  height: 3rem; /* keep aspect ratio */
+}
+
+.work-container {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ccd2e000;
+  padding: 0.5rem;
+}
 .footer-container {
-    margin-top: auto;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   background-color: #ccd2e000;
-  
+
   transition: letter-spacing 0.3s ease;
 }
 
@@ -69,15 +93,9 @@ html {
   background-color: #ccd2e000;
 }
 .footer-text {
-
-
   background-color: #ccd2e0;
 }
 .work-text {
-  margin-top: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  margin-left: 6rem;
   font-size: 2rem;
   max-width: 25ch;
   background-color: #ccd2e0;
