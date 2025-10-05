@@ -4,7 +4,7 @@ const projects = [
     title: "[title] Water Station Concept",
     tags: ["[tags] archviz,", "animation"],
     description:
-      "A comissioned project for a water station concept design. The client wanted a modern, sleek design that would stand out and be functional. I used Blender to create the 3D model and rendered it using Cycles. The project included creating a short animation to showcase the design from different angles and perspectives.",
+      "A comissioned project for a water station concept design. The client wanted a modern, sleek design that would stand out and be functional to be integrated to an existing real-world residence. I used Blender to create the 3D model and rendered it using Cycles. The project included creating a short animation to showcase the design from different angles and perspectives.",
     images: [
       "/projects/water-station-img-1.png",
       "/projects/water-station-img-2.png",
@@ -16,7 +16,7 @@ const projects = [
   {
     cover: { type: "image", src: "/projects/room-update-img-1.png" },
     title: "[title] Room Tour Project - V2",
-    tags: ["[tags] archviz, ", "interior design"],
+    tags: ["[tags] archviz,", "interior design"],
     description:
       "This project is a continuation of my previous Room Tour Project, where I redesigned and updated the scene to reflect my current apartment. I focused on improving the lighting, materials, and overall composition to create a more cohesive and visually appealing space. The project also included adding new furniture and decor elements to enhance the overall aesthetic.",
     images: [
@@ -29,7 +29,7 @@ const projects = [
   {
     cover: { type: "image", src: "/projects/bathroom-img-1.png" },
     title: "[title] Bathroom Render",
-    tags: ["[tags] archviz", "interior design"],
+    tags: ["[tags] archviz,", "interior design"],
     description:
       "A personal project to practice interior design and archviz rendering. I recreated a modern bathroom layout and focused on creating realistic materials and lighting to showcase the space effectively. The project helped me improve my skills in modeling, texturing, and rendering in Blender.",
     images: [
@@ -153,7 +153,7 @@ const projects = [
   {
     cover: { type: "image", src: "/projects/living-room-img-1.png" },
     title: "[title] Living Room Renovation",
-    tags: ["[tags] archviz", "interior design"],
+    tags: ["[tags] archviz,", "interior design"],
     description:
       "Continuing my weekly challenge, I chose to model a pocket knife as an exercise in mastering bevel techniques, alongside quad-based modeling and subdivision for clean topology and detailed geometry. This project helped me refine my speed and efficiency while experimenting with different approaches to bevels, making the workflow both engaging and instructive as I balanced technique with creativity in a fast-paced environment.",
     images: [

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -26,14 +26,73 @@ function ScrollToHash() {
   return null;
 }
 
+const WordFlip = () => {
+  const words = ["DESIGNER", "MODELER", "RENDERER", "DESIGNER"];
+  const extendedWords = [...words, ...words];
+  const wordHeight = 16;
+  const [index, setIndex] = useState(0);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (index + 1 === extendedWords.length) {
+        setIsTransitionEnabled(false);
+        setIndex(words.length); 
+        timeoutRef.current = setTimeout(() => {
+          setIsTransitionEnabled(true);
+          setIndex(0);
+        }, 50);
+      } else {
+        
+        setIsTransitionEnabled(true);
+        setIndex((prev) => prev + 1);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeoutRef.current);
+    };
+  }, [index, extendedWords.length, words.length]);
+
+  return (
+    <div className="container">
+      <span>3D </span>
+      <div className="word-flip">
+        {extendedWords.map((word, i) => (
+          <div
+            key={i}
+            className="word"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: `${wordHeight}rem`,
+              lineHeight: `${wordHeight}rem`,
+              transition: isTransitionEnabled ? "transform 0.6s ease" : "none",
+              transform: `translateY(${(i - index) * wordHeight}rem)`,
+            }}
+          >
+            {word}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 function PageSections() {
   return (
     <div className="page-sections">
       <section id="home">
         {/* Home content */}
-        <h1>3D DESIGNER</h1>
-        <h1>ALLEN ROJO</h1>
-        <p>Scroll to Explore</p>
+        <p className="intro-text">
+          I'm a skilled 3D generalist, with more than 5 years experience with crafting immersive architectural
+          visualizations and detailed product models that elevate every project.
+        </p>
+        <WordFlip />
+        <p className="name-text">ALLEN ROJO</p>
+        <p className="footer-text">Scroll to Explore</p>
       </section>
 
       <section id="projects">
@@ -43,7 +102,7 @@ function PageSections() {
 
       <section id="contact">
         {/* Contact content */}
-        <h1>Contact</h1>
+        <p>Contact</p>
       </section>
     </div>
   );
