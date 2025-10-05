@@ -26,9 +26,18 @@ html {
   align-items: center;
 }
 
+#home {
+  background-color: #ccd2e0;
+}
 #home h1 {
   font-size: 9rem;
+  background-color: #ccd2e0;
 }
+#home p {
+  
+  margin-top: 16rem;
+}
+
 .main-container {
   display: flex;
   margin-left: 13.75rem;

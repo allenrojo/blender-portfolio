@@ -32,6 +32,7 @@ function PageSections() {
       <section id="home">
         {/* Home content */}
         <h1>3D DESIGNER</h1>
+        <h1>ALLEN ROJO</h1>
         <p>Scroll to Explore</p>
       </section>
 

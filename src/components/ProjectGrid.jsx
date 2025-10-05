@@ -21,11 +21,14 @@ function ProjectCard({ cover, title, tags, span }) {
       style={{ gridColumn: `span ${span || 1}` }}
     >
       <div className="project-card">
-        {cover.type === "video" ? (
-          <video src={cover.src} autoPlay muted loop playsInline />
-        ) : (
-          <img src={cover.src} alt={title} />
-        )}
+        
+          <div className="overlay"></div>
+          {cover.type === "video" ? (
+            <video src={cover.src} autoPlay muted loop playsInline />
+          ) : (
+            <img src={cover.src} alt={title} />
+          )}
+        
         <div className="project-info">
           <div className="project-title">{title}</div>
           <div className="project-tags">
