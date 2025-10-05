@@ -42,10 +42,18 @@
 
 .project-info {
   padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .project-tags span {
   margin-right: 0.5rem;
 }
 .project-card-link {
   text-decoration: none;
+  transition: transform 0.5s ease, opacity 0.1s ease;
+  
+}
+
+.project-card-link.animate-exit {
+  transform: scale(1.05);
+  opacity: 0.1;
 }

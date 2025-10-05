@@ -51,9 +51,35 @@ html {
   background-color: #ccd2e0;
 }
 
+.footer-container {
+    margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ccd2e000;
+  
+  transition: letter-spacing 0.3s ease;
+}
+
+.footer-container:hover {
+  letter-spacing: 0.2em; /* increase as desired */
+}
+
+.down-arrow {
+  background-color: #ccd2e000;
+}
 .footer-text {
+
+
+  background-color: #ccd2e0;
+}
+.work-text {
   margin-top: auto;
-  margin-bottom: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
+  font-size: 2rem;
+  max-width: 25ch;
   background-color: #ccd2e0;
 }
 .container {
