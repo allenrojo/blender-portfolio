@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { projects } from "../projects.js";
 import { useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import "./ProjectGrid.css";
 
 function ProjectGrid() {
@@ -14,11 +15,14 @@ function ProjectGrid() {
 }
 export default ProjectGrid;
 
-
 function ProjectCard({ cover, title, tags, span }) {
   const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
   const videoRef = useRef(null);
+
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  console.log('Is in view:', inView);
+  const videoSrc = inView && cover.type === "video" ? cover.src : "";
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -42,8 +46,10 @@ function ProjectCard({ cover, title, tags, span }) {
     }
   };
 
+
   return (
     <div
+      ref={ref}
       className={`project-card-link ${isAnimating ? "animate-exit" : ""}`}
       style={{ gridColumn: `span ${span || 1}` }}
       onClick={handleClick}
@@ -60,20 +66,18 @@ function ProjectCard({ cover, title, tags, span }) {
         {cover.type === "video" ? (
           <video 
             ref={videoRef}
-            src={cover.src}
+            src={videoSrc}
             muted
             loop
             playsInline
           />
         ) : (
-          <img src={cover.src} alt={title} />
+          <img src={cover.src} alt={title} loading="lazy" />
         )}
         <div className="project-info">
           <div className="project-title">{title}</div>
           <div className="project-tags">
-            {tags.map(tag => (
-              <span key={tag}>{tag}</span>
-            ))}
+            {tags.map(tag => <span key={tag}>{tag}</span>)}
           </div>
         </div>
       </div>

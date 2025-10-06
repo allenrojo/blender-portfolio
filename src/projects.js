@@ -24,7 +24,6 @@ const projects = [
       "/projects/room-update-img-2.png",
       "/projects/room-update-img-3.png",
     ],
-    videos: [],
   },
   {
     cover: { type: "image", src: "/projects/bathroom-img-1.png" },
@@ -37,7 +36,6 @@ const projects = [
       "/projects/bathroom-img-2.png",
       "/projects/bathroom-img-3.png",
     ],
-    videos: [],
   },
   {
     cover: { type: "video", src: "/projects/4d-chess-vid-1.mp4" },
@@ -64,7 +62,6 @@ const projects = [
       "/projects/room-tour-img-3.jpg",
       "/projects/room-tour-img-4.jpg",
     ],
-    videos: [],
     span: 2,
   },
   {
@@ -93,7 +90,7 @@ const projects = [
       "/projects/gulikit-controller-img-3.png",
       "/projects/gulikit-controller-img-4.png",
     ],
-    videos: [],
+
   },
   {
     cover: { type: "image", src: "/projects/jbecp-img-1.png" },
@@ -106,7 +103,7 @@ const projects = [
       "/projects/jbecp-img-2.png",
       "/projects/jbecp-img-3.png",
     ],
-    videos: [],
+
   },
 
   {
@@ -120,7 +117,7 @@ const projects = [
       "/projects/benchmade-img-2.png",
       "/projects/benchmade-img-3.png",
     ],
-    videos: [],
+
   },
   {
     cover: { type: "video", src: "/projects/nbs-vid-1.mp4" },
@@ -161,7 +158,7 @@ const projects = [
       "/projects/living-room-img-2.png",
       "/projects/living-room-img-3.png",
     ],
-    videos: [],
+
     span: 1,
   },
   {
@@ -175,7 +172,7 @@ const projects = [
       "/projects/map-img-2.png",
       "/projects/map-img-3.png",
     ],
-    videos: [],
+
     span: 1,
   },
   {
@@ -190,7 +187,7 @@ const projects = [
       "/projects/chiron-img-3.jpg",
       "/projects/chiron-img-4.jpg",
     ],
-    videos: [],
+
     span: 1,
   },
   {

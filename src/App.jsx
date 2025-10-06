@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import emailjs from "emailjs-com";
 
 import Navbar from "./components/Navbar";
 import ProjectGrid from "./components/ProjectGrid";
@@ -92,7 +93,7 @@ function ManilaTime() {
   };
 
   const formattedTime = time.toLocaleTimeString([], options);
-  const gmtOffset = "+8"; // Manila is GMT+8 with no daylight saving
+  const gmtOffset = "+8";
 
   return (
     <p>
@@ -101,7 +102,28 @@ function ManilaTime() {
   );
 }
 
+const sendEmail = (e) => {
+  e.preventDefault();
 
+  emailjs
+    .sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      e.target,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(
+      (result) => {
+        console.log("Email sent successfully:", result.text);
+        alert("Message sent!");
+        e.target.reset();
+      },
+      (error) => {
+        console.log("Failed to send email:", error.text);
+        alert("Failed to send message, please try again.");
+      }
+    );
+};
 function PageSections() {
   return (
     <div className="page-sections">
@@ -147,31 +169,32 @@ function PageSections() {
         {/* Contact content */}
         <p className="header-1-contact">BIG IDEAS</p>
         <p className="header-2-contact">start with small conversations</p>
-        <form className="contact-section">
+        <form className="contact-section" onSubmit={sendEmail}>
           <label>
-            YOUR NAME*
-            <input type="text" required />
+            YOUR NAME *
+            <input type="text" name="user_name" required />
           </label>
           <label>
-            PHONE*
-            <input type="tel" required />
+            PHONE *
+            <input type="tel" name="user_phone" required />
           </label>
           <label>
-            YOUR EMAIL*
-            <input type="email" required />
+            YOUR EMAIL *
+            <input type="email" name="user_email" required />
           </label>
           <label>
-            HOW CAN I HELP YOU
-            <textarea rows="4"></textarea>
+            HOW CAN I HELP YOU *
+            <textarea name="message" rows="4" required></textarea>
           </label>
+          <button type="submit" className="contact-submit">
+            LET'S TALK
+            <img className="down-arrow" src="/up-arrow.svg" alt="up arrow" />
+          </button>
         </form>
-        <button type="submit" className="contact-submit">
-          DISCUSS THE PROJECT
-          <img className="down-arrow" src="/up-arrow.svg" alt="up arrow" />
-        </button>
+
         <div className="footer-container-contact">
           <p>©2025 Allen Rojo</p>
-          
+
           <ManilaTime></ManilaTime>
         </div>
       </section>
