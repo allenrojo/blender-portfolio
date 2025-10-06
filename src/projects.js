@@ -84,7 +84,7 @@ const projects = [
   {
     cover: { type: "image", src: "/projects/gulikit-controller-img-1.png" },
     title: "[title] GuliKit Controller",
-    tags: ["[tags] hard-surface,", "quad-based modeling,","data transfer"],
+    tags: ["[tags] quad-based modeling,","data transfer"],
     description:
       "A quick exploration of quad-based modeling and the subdivision workflow, created as part of my weekly challenge to model random objects from my desk as quickly as possible. This was also my first time experimenting with Blender’s data transfer modifier, adding a new tool to my collection. It was a fun, fast-paced exercise in both technique and creativity.",
     images: [

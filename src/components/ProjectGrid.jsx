@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { projects } from "../projects.js";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./ProjectGrid.css";
 
 function ProjectGrid() {
@@ -14,9 +14,11 @@ function ProjectGrid() {
 }
 export default ProjectGrid;
 
+
 function ProjectCard({ cover, title, tags, span }) {
   const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
+  const videoRef = useRef(null);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -24,6 +26,20 @@ function ProjectCard({ cover, title, tags, span }) {
     setTimeout(() => {
       navigate(`/projects/${encodeURIComponent(title)}`);
     }, 500); // match this to your CSS animation duration
+  };
+
+  // Play video on hover
+  const handleMouseEnter = () => {
+    if (cover.type === "video" && videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+  // Pause and reset video on mouse leave
+  const handleMouseLeave = () => {
+    if (cover.type === "video" && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
   };
 
   return (
@@ -35,10 +51,20 @@ function ProjectCard({ cover, title, tags, span }) {
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === "Enter") handleClick(e); }}
     >
-      <div className="project-card">
+      <div
+        className="project-card"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className="overlay"></div>
         {cover.type === "video" ? (
-          <video src={cover.src} autoPlay muted loop playsInline />
+          <video 
+            ref={videoRef}
+            src={cover.src}
+            muted
+            loop
+            playsInline
+          />
         ) : (
           <img src={cover.src} alt={title} />
         )}

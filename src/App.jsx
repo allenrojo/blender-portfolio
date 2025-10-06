@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -76,6 +76,32 @@ const WordFlip = () => {
   );
 };
 
+function ManilaTime() {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const options = {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Manila",
+    hour12: false,
+  };
+
+  const formattedTime = time.toLocaleTimeString([], options);
+  const gmtOffset = "+8"; // Manila is GMT+8 with no daylight saving
+
+  return (
+    <p>
+      Manila, Philippines: (GMT{gmtOffset}) {formattedTime}
+    </p>
+  );
+}
+
+
 function PageSections() {
   return (
     <div className="page-sections">
@@ -143,6 +169,11 @@ function PageSections() {
           DISCUSS THE PROJECT
           <img className="down-arrow" src="/up-arrow.svg" alt="up arrow" />
         </button>
+        <div className="footer-container-contact">
+          <p>©2025 Allen Rojo</p>
+          
+          <ManilaTime></ManilaTime>
+        </div>
       </section>
     </div>
   );
