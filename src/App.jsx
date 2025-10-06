@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -29,7 +29,7 @@ function ScrollToHash() {
 const WordFlip = () => {
   const words = ["DESIGNER", "MODELER", "RENDERER", "DESIGNER"];
   const extendedWords = [...words, ...words];
-  const wordHeight = 16;
+  const wordHeight = 14;
   const [index, setIndex] = useState(0);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const timeoutRef = useRef(null);
@@ -58,17 +58,13 @@ const WordFlip = () => {
 
   return (
     <div className="container">
-      <span>3D </span>
+      <p>3D </p>
       <div className="word-flip">
         {extendedWords.map((word, i) => (
           <div
             key={i}
             className="word"
             style={{
-              position: "absolute",
-              width: "100%",
-              height: `${wordHeight}rem`,
-              lineHeight: `${wordHeight}rem`,
               transition: isTransitionEnabled ? "transform 0.6s ease" : "none",
               transform: `translateY(${(i - index) * wordHeight}rem)`,
             }}
@@ -87,7 +83,7 @@ function PageSections() {
       <section id="home">
         {/* Home content */}
         <p className="intro-text">
-          I'm a skilled 3D generalist, with more than 5 years experience with crafting immersive architectural
+          I'm a skilled 3D generalist, with more than five years of experience with crafting immersive architectural
           visualizations and detailed product models that elevate every project.
         </p>
         <WordFlip />

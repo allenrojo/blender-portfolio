@@ -8,10 +8,10 @@
   background-color: #ccd2e0;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.04) 1px,
+      rgba(0, 0, 0, 0.02) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 10px 10px; /* smaller grid squares for finer grid */
 }
 .project-card {

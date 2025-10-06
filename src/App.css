@@ -2,19 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(236, 239, 244);
   font-family: JetBrains Mono, monospace;
   color: #6a7791;
 }
 
-html {
-  scroll-behavior: smooth;
+.body {
+  background-color: rgba(236, 239, 244);
 }
 
-.page-sections {
-  height: auto;
-  display: flex;
-  flex-direction: column;
+html {
+  scroll-behavior: smooth;
 }
 
 #home,
@@ -27,41 +24,44 @@ html {
   background-color: #ccd2e0;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.04) 1px,
+      rgba(0, 0, 0, 0.02) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-  background-size: 10px 10px; /* smaller grid squares for finer grid */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 10px 10px;
 }
 
 #home p {
-  background-color: #00000000;
+  background-color: transparent;
 }
 
 .intro-text {
-  margin-top: auto;
-  margin-right: auto;
-  margin-left: 6rem;
+  margin: auto auto 4rem 6rem;
   text-align: left;
   max-width: 50ch;
-  background-color: #ccd2e0;
 }
 .name-text {
+  margin-left: auto;
+  margin-right: 6rem;
   font-size: 6rem;
-  background-color: #ccd2e0;
   letter-spacing: -0.1em;
 }
 
 .logo-container {
   display: flex;
   gap: 3rem;
-  background-color: #d8dee900;
+  background-color: transparent;
   mix-blend-mode: luminosity;
+  opacity: 0.8;
 }
 .large-logo {
-  background-color: #d8dee900;
-  width: auto; /* or any size you want */
-  height: 3rem; /* keep aspect ratio */
+  background-color: transparent;
+  width: auto;
+  height: 3rem;
+  transition: scale 0.3s ease;
+}
+.large-logo:hover {
+  scale: 1.1;
 }
 
 .work-container {
@@ -71,62 +71,53 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: #ccd2e000;
+  background-color: transparent;
   padding: 0.5rem;
 }
+.work-text {
+  font-size: 2rem;
+  max-width: 25ch;
+}
+
 .footer-container {
   margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #ccd2e000;
-
+  background-color: transparent;
   transition: letter-spacing 0.3s ease;
 }
-
 .footer-container:hover {
-  letter-spacing: 0.2em; /* increase as desired */
+  letter-spacing: 0.2em; 
 }
 
-.down-arrow {
-  background-color: #ccd2e000;
-}
-.footer-text {
-  background-color: #ccd2e0;
-}
-.work-text {
-  font-size: 2rem;
-  max-width: 25ch;
-  background-color: #ccd2e0;
-}
 .container {
-  font-size: 16rem;
+  font-size: 14rem;
   font-weight: bold;
   display: flex;
-  align-items: center; /* vertically center 3D and words */
-  background-color: #ccd2e000;
+  align-items: center; 
+  background-color: transparent;
 }
 
 .word-flip {
   position: relative;
-  width: 8ch; /* fixed width to prevent wrapping */
-  height: 16rem;
-  overflow: hidden;
-  margin-left: 0.5rem; /* space from 3D */
-  background-color: #ccd2e000;
+  width: 8ch; 
+  height: 14rem;
+  overflow: hidden; 
+  background-color: transparent;
 }
 
-.container span {
-  background-color: #ccd2e000;
+.container p {
+  background-color: transparent;
+  letter-spacing: -0.08em;
+  margin-right: 2rem;
 }
 .word {
   position: absolute;
   width: 100%;
-  height: 16rem;
-  line-height: 16rem;
-  transition: transform 0.6s ease;
-  background-color: #ccd2e000;
+  height: 14rem;
+  line-height: 14rem;
+  background-color: transparent;
 }
 
 .main-container {
