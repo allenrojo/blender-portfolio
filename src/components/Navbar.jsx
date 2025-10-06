@@ -6,13 +6,13 @@ function Navbar() {
     <div className="navbar-container">
       <nav className="navbar">
         <NavLink to="/#home" className="nav-link">
-          [home]
+          [HOME]
         </NavLink>
         <NavLink to="/#projects" className="nav-link">
-          [projects]
+          [PROJECTS]
         </NavLink>
         <NavLink to="/#contact" className="nav-link">
-          [contact]
+          [CONTACT]
         </NavLink>
       </nav>
       <img className="logo" src="/logo.svg"></img>

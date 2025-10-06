@@ -88,22 +88,22 @@ html {
   transition: letter-spacing 0.3s ease;
 }
 .footer-container:hover {
-  letter-spacing: 0.2em; 
+  letter-spacing: 0.2em;
 }
 
 .container {
   font-size: 14rem;
   font-weight: bold;
   display: flex;
-  align-items: center; 
+  align-items: center;
   background-color: transparent;
 }
 
 .word-flip {
   position: relative;
-  width: 8ch; 
+  width: 8ch;
   height: 14rem;
-  overflow: hidden; 
+  overflow: hidden;
   background-color: transparent;
 }
 
@@ -118,6 +118,68 @@ html {
   height: 14rem;
   line-height: 14rem;
   background-color: transparent;
+}
+
+.header-1-contact {
+  font-size: 14rem;
+  font-weight: bold;
+  background-color: transparent;
+  letter-spacing: -0.08em;
+  word-spacing: -0.3em;
+}
+.header-2-contact {
+  background-color: transparent;
+  margin-bottom: 2rem;
+  transition: letter-spacing 0.3s ease;
+}
+.header-2-contact:hover {
+  letter-spacing: 0.2em;
+}
+.contact-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.contact-section label {
+  display: block;
+  font-size: 1rem;
+  color: #6a7791;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+
+  border: none;
+  border-bottom: 2px solid #6a7791;
+  background: transparent;
+  font-size: inherit;
+  padding: 0.5rem 0;
+  outline: none;
+  resize: none;
+}
+.contact-section textarea {
+  min-height: 80px;
+}
+
+.contact-submit {
+  background: none;
+  border: none;
+  text-decoration: none; /* if you want underline effect */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  transition: letter-spacing 0.3s ease;
+  border-bottom: #6a7791 1px solid;
+}
+.contact-submit:hover,
+.contact-submit:focus {
+  outline: none;
+  letter-spacing: 0.2em;
 }
 
 .main-container {

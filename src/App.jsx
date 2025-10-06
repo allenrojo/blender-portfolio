@@ -38,13 +38,12 @@ const WordFlip = () => {
     const interval = setInterval(() => {
       if (index + 1 === extendedWords.length) {
         setIsTransitionEnabled(false);
-        setIndex(words.length); 
+        setIndex(words.length);
         timeoutRef.current = setTimeout(() => {
           setIsTransitionEnabled(true);
           setIndex(0);
         }, 50);
       } else {
-        
         setIsTransitionEnabled(true);
         setIndex((prev) => prev + 1);
       }
@@ -83,26 +82,32 @@ function PageSections() {
       <section id="home">
         {/* Home content */}
         <p className="intro-text">
-          I'm a skilled 3D generalist, with more than five years of experience with crafting immersive architectural
-          visualizations and detailed product models that elevate every project.
+          I'm a skilled 3D generalist, with more than five years of experience
+          with crafting immersive architectural visualizations and detailed
+          product models that elevate every project.
         </p>
         <WordFlip />
         <p className="name-text">ALLEN ROJO</p>
-        
+
         <div className="footer-container">
           <p className="footer-text">Scroll to Explore</p>
-          <img className="down-arrow" src="/arrow.svg" alt="down arrow" />
+          <img className="down-arrow" src="/down-arrow.svg" alt="down arrow" />
         </div>
         <div className="work-container">
-          <p className="work-text">Some of my recent works and personal projects.</p>
+          <p className="work-text">
+            Some of my recent works and personal projects.
+          </p>
           <div className="logo-container">
             <img className="large-logo" src="/blender-logo.svg" alt="logo" />
             <img className="large-logo" src="/photoshop-logo.svg" alt="logo" />
-            <img className="large-logo" src="/illustrator-logo.svg" alt="logo" />
+            <img
+              className="large-logo"
+              src="/illustrator-logo.svg"
+              alt="logo"
+            />
             <img className="large-logo" src="/figma-logo.svg" alt="logo" />
             <img className="large-logo" src="/unreal-logo.svg" alt="logo" />
             <img className="large-logo" src="/qgis-logo.svg" alt="logo" />
-          
           </div>
         </div>
       </section>
@@ -114,7 +119,30 @@ function PageSections() {
 
       <section id="contact">
         {/* Contact content */}
-        <p>Contact</p>
+        <p className="header-1-contact">BIG IDEAS</p>
+        <p className="header-2-contact">start with small conversations</p>
+        <form className="contact-section">
+          <label>
+            YOUR NAME*
+            <input type="text" required />
+          </label>
+          <label>
+            PHONE*
+            <input type="tel" required />
+          </label>
+          <label>
+            YOUR EMAIL*
+            <input type="email" required />
+          </label>
+          <label>
+            HOW CAN I HELP YOU
+            <textarea rows="4"></textarea>
+          </label>
+        </form>
+        <button type="submit" className="contact-submit">
+          DISCUSS THE PROJECT
+          <img className="down-arrow" src="/up-arrow.svg" alt="up arrow" />
+        </button>
       </section>
     </div>
   );

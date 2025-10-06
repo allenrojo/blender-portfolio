@@ -17,6 +17,7 @@
 .project-card {
   overflow: hidden;
   position: relative;
+  background-color: #eceff4;
 }
 .project-card img,
 .project-card video {
