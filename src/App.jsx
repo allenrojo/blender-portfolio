@@ -123,16 +123,42 @@ function PageSections() {
             Some of my recent works and personal projects.
           </p>
           <div className="logo-container">
-            <img className="large-logo" src="/blender-logo.svg" alt="logo" />
-            <img className="large-logo" src="/photoshop-logo.svg" alt="logo" />
+            <img
+              className="large-logo"
+              src="/blender-logo.svg"
+              alt="logo"
+              title="Blender"
+            />
+            <img
+              className="large-logo"
+              src="/photoshop-logo.svg"
+              alt="logo"
+              title="Adobe Photoshop"
+            />
             <img
               className="large-logo"
               src="/illustrator-logo.svg"
               alt="logo"
+              title="Adobe Illustrator"
             />
-            <img className="large-logo" src="/figma-logo.svg" alt="logo" />
-            <img className="large-logo" src="/unreal-logo.svg" alt="logo" />
-            <img className="large-logo" src="/qgis-logo.svg" alt="logo" />
+            <img
+              className="large-logo"
+              src="/figma-logo.svg"
+              alt="logo"
+              title="Figma"
+            />
+            <img
+              className="large-logo"
+              src="/qgis-logo.svg"
+              alt="logo"
+              title="QGIS"
+            />
+            <img
+              className="large-logo"
+              src="/unreal-logo.svg"
+              alt="logo"
+              title="Unreal Engine"
+            />
           </div>
         </div>
       </section>
@@ -180,12 +206,10 @@ function App() {
     <>
       <Navbar />
       <ScrollToHash />
-      <div className="main-container">
-        <Routes>
-          <Route path="/" element={<PageSections />} />
-          <Route path="/projects/:title" element={<ProjectDetail />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<PageSections />} />
+        <Route path="/projects/:title" element={<ProjectDetail />} />
+      </Routes>
     </>
   );
 }

@@ -4,19 +4,20 @@
   box-sizing: border-box;
   font-family: JetBrains Mono, monospace;
   color: #6a7791;
-}
-
-.body {
-  background-color: rgba(236, 239, 244);
+  scroll-behavior: smooth;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+.page-sections {
+  margin-left: 13.75rem;;
+}
 #home,
 #contact {
   height: 125vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +52,7 @@ html {
   display: flex;
   gap: 3rem;
   background-color: transparent;
-  mix-blend-mode: luminosity;
+
   opacity: 0.8;
 }
 .large-logo {
@@ -126,6 +127,7 @@ html {
   background-color: transparent;
   letter-spacing: -0.08em;
   word-spacing: -0.3em;
+  margin-top: 4rem;
 }
 .header-2-contact {
   background-color: transparent;
@@ -194,8 +196,8 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: .5rem;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -204,5 +206,5 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: transparent;
 }
