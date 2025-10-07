@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { projects } from "../projects.js";
-import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { useState, useRef } from "react";
+
+import { projects } from "../projects.js";
+
 import "./ProjectGrid.css";
 
 function ProjectGrid() {

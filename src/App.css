@@ -61,7 +61,7 @@ html {
   transition: scale 0.3s ease;
 }
 .large-logo:hover {
-  scale: 1.1;
+  scale: 1.3;
 }
 
 .work-container {
@@ -140,6 +140,7 @@ html {
   margin: 4rem auto;
   display: flex;
   flex-direction: column;
+  
   gap: 3rem;
 }
 .contact-section label {
@@ -168,8 +169,12 @@ html {
 .contact-submit {
   background: none;
   border: none;
-  text-decoration: none; /* if you want underline effect */
+  margin-left: auto;
+  margin-right: auto ;
+  width: fit-content;
+  text-decoration: none; 
   display: flex;
+  justify-content: center ;
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
@@ -182,19 +187,6 @@ html {
   letter-spacing: 0.2em;
 }
 
-.footer-container-contact {
-  margin-top: auto;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: transparent;
-
-
-}
 
 .main-container {
   display: flex;

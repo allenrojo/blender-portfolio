@@ -1,11 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
 import emailjs from "emailjs-com";
 
 import Navbar from "./components/Navbar";
 import ProjectGrid from "./components/ProjectGrid";
 import ProjectDetail from "./components/ProjectDetail";
+import Footer from "./components/Footer.jsx";
+
 import "./App.css";
 
 function ScrollToHash() {
@@ -77,31 +78,6 @@ const WordFlip = () => {
   );
 };
 
-function ManilaTime() {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const options = {
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "Asia/Manila",
-    hour12: false,
-  };
-
-  const formattedTime = time.toLocaleTimeString([], options);
-  const gmtOffset = "+8";
-
-  return (
-    <p>
-      Manila, Philippines: (GMT{gmtOffset}) {formattedTime}
-    </p>
-  );
-}
-
 const sendEmail = (e) => {
   e.preventDefault();
 
@@ -124,6 +100,7 @@ const sendEmail = (e) => {
       }
     );
 };
+
 function PageSections() {
   return (
     <div className="page-sections">
@@ -192,11 +169,7 @@ function PageSections() {
           </button>
         </form>
 
-        <div className="footer-container-contact">
-          <p>©2025 Allen Rojo</p>
-
-          <ManilaTime></ManilaTime>
-        </div>
+        <Footer> </Footer>
       </section>
     </div>
   );

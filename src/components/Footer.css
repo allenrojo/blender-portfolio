@@ -1,0 +1,10 @@
+.footer-container-contact {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}

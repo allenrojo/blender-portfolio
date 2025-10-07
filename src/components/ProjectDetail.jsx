@@ -1,8 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projects } from "../projects.js";
+
+import Footer from "./Footer.jsx";
+
 import "./ProjectDetail.css";
-import { Link } from "react-router-dom";
 
 function ProjectDetail() {
   const { title } = useParams();
@@ -21,23 +23,21 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-container">
-      <p> {project.title}</p>
-      <p>[description] {project.description}</p>
+      <Link to="/#projects" className="back-home-link">
+        ← Back to Projects
+      </Link>
+      <p className="details"> {project.title}</p>
+      <p className="details">[description] {project.description}</p>
       <MediaColumn
         images={project.images || []}
         videos={project.videos || []}
       />
-      {/*<div className="project-grid-wrapper">
-        <p>Other Projects</p>
-        <ProjectGrid />
-      </div>*/}
-
-      <Link to="/#projects" className="back-home-link">
-        ← Back to Projects
-      </Link>
+      <Footer></Footer>
     </div>
   );
 }
+
+
 
 function MediaColumn({ images = [], videos = [] }) {
   const mediaItems = [
