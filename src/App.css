@@ -12,7 +12,7 @@ html {
 }
 
 .page-sections {
-  margin-left: 13.75rem;;
+  margin-left: 13.75rem;
 }
 #home,
 #contact {
@@ -142,7 +142,7 @@ html {
   margin: 4rem auto;
   display: flex;
   flex-direction: column;
-  
+
   gap: 3rem;
 }
 .contact-section label {
@@ -172,11 +172,11 @@ html {
   background: none;
   border: none;
   margin-left: auto;
-  margin-right: auto ;
+  margin-right: auto;
   width: fit-content;
-  text-decoration: none; 
+  text-decoration: none;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
@@ -189,14 +189,15 @@ html {
   letter-spacing: 0.2em;
 }
 
-
 .main-container {
   display: flex;
   margin-left: 13.75rem;
 }
 
 ::-webkit-scrollbar {
-  width: .5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+
   background-color: transparent;
 }
 
@@ -208,3 +209,4 @@ html {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
