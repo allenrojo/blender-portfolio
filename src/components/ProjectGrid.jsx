@@ -44,7 +44,7 @@ function ProjectCard({ cover, title, tags, span }) {
   const handleMouseLeave = () => {
     if (cover.type === "video" && videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      
     }
   };
 
