@@ -24,8 +24,12 @@ function ProjectDetail() {
   return (
     <div className="project-detail-container">
       <Link to="/#projects" className="back-home-link">
-        ← Back to Projects
+        <span className="detail-text-wrapper">
+          <span className="text-original">← Back to Projects</span>
+          <span className="text-duplicate">← Back to Projects</span>
+          </span>
       </Link>
+
       <p className="details"> {project.title}</p>
       <p className="details">[description] {project.description}</p>
       <MediaColumn
@@ -36,8 +40,6 @@ function ProjectDetail() {
     </div>
   );
 }
-
-
 
 function MediaColumn({ images = [], videos = [] }) {
   const mediaItems = [

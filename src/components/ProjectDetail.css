@@ -15,11 +15,65 @@
   background-size: 10px 10px;
 }
 .back-home-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;;
+  
+  
+}
+.detail-text-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 1.4rem;
+  overflow: hidden;
+}
 
-  width: fit-content;
-  border-bottom: #6a7791 1px solid;
+.text-original,
+.text-duplicate {
+  display: block;
+  transform: translateY(0);
+  filter: blur(0);
+  /* Updated transition timing for smooth, balanced effect */
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.text-original {
+  position: relative;
+  z-index: 1;
+}
+
+.text-duplicate {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Hover in: outgoing original slides down and blurs */
+.back-home-link:hover .text-original {
+  transform: translateY(100%);
+  filter: blur(4px);
+}
+
+/* Hover in: incoming duplicate slides down, no blur */
+.back-home-link:hover .text-duplicate {
+  transform: translateY(100%);
+  filter: blur(0);
+}
+
+/* Hover out: original slides back up, no blur */
+.back-home-link:not(:hover) .text-original {
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Hover out: duplicate slides back up and blurs */
+.back-home-link:not(:hover) .text-duplicate {
+  transform: translateY(0);
+  filter: blur(2px);
 }
 .details {
   padding-bottom: 1rem;
