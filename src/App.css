@@ -17,7 +17,6 @@ html {
 #home,
 #contact {
   height: 125vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,4 +208,3 @@ html {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
-

@@ -27,7 +27,7 @@ function ProjectDetail() {
         <span className="detail-text-wrapper">
           <span className="text-original">← Back to Projects</span>
           <span className="text-duplicate">← Back to Projects</span>
-          </span>
+        </span>
       </Link>
 
       <p className="details"> {project.title}</p>
